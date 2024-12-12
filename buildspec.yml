@@ -2,7 +2,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: corretto11
+      java: corretto17
   pre_build:
     commands:
       - echo Starting pre-build phase
@@ -16,8 +16,10 @@ phases:
       - echo Build completed on `date`
       - mvn package
       - ls
-      - aws lambda update-function-code --function-name chapter_12_lambda_function --zip-file fileb://target/aws-lambda-pipeline-1.0-SNAPSHOT.jar
+      - aws lambda update-function-code --function-name java-demo-lambda --zip-file fileb://target/DemoLambda-1.0.jar
 artifacts:
   files:
-    - target/aws-lambda-pipeline*.jar
+    - target/DemoLambda*.jar
   discard-paths: yes
+
+#fileb: đọc từ máy build local
