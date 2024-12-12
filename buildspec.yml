@@ -16,6 +16,7 @@ phases:
       - echo Build completed on `date`
       - mvn package
       - ls
+      - ls target
       - aws lambda update-function-code --function-name java-demo-lambda --zip-file fileb://target/DemoLambda-1.0.jar
 artifacts:
   files:
