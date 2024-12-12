@@ -14,7 +14,7 @@ public class CreateEmployeeHandler implements RequestHandler<EmployeeEntity, Str
 	@Override
 	public String handleRequest(EmployeeEntity event, Context context) {
 		log.info("Received a request in your lambda  function {} with details {}", context.getFunctionName(), event);
-		
+		log.info("To String {} ", event);
 		return "Employee is created successfully !";
 	}
  
